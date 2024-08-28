@@ -1,4 +1,4 @@
-# Kickstarter projekt med PHP
+# Sport base - bygget på kickstaterPhp
 
 Download projektet som ZIP-fil
 
