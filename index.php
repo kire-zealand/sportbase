@@ -21,7 +21,7 @@ require "settings/init.php";
     <div class="container">
         <div class="row g-4 mt-2">
             <?php
-            $sportEvents = $db->sql("SELECT * FROM events");
+            $sportEvents = $db->sql("SELECT * FROM events ORDER BY evenDateTime ASC");
             foreach($sportEvents as $sportEvent) {
                 ?>
                 <div class="col-12 col-md-6">
