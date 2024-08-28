@@ -1,5 +1,4 @@
 <?php
-global $db;
 require "settings/init.php";
 ?>
 <!DOCTYPE html>
