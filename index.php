@@ -20,23 +20,24 @@ require "settings/init.php";
 
 <body>
     <div class="container">
-        <div class="row g-4 mt-2">
+        <h1>Sport events</h1>
+        <div class="row g-4">
             <?php
             $sportEvents = $db->sql("SELECT * FROM events ORDER BY evenDateTime ASC");
             foreach($sportEvents as $sportEvent) {
                 ?>
                 <div class="col-12 col-md-6">
                     <div class="card w-100">
-                        <div class="card-header bg-primary text-light">
+                        <div class="card-header bg-primary text-light py-3">
                             <?php
-                            echo $sportEvent->evenName . " / " . $sportEvent->evenLocation;
+                            echo "<h2 class='m-0'>".$sportEvent->evenName . "<span class='text-secondary'> / " . $sportEvent->evenLocation . "</span></h2>";
                             ?>
                         </div>
                         <div class="card-body">
                             <?php
                             echo $sportEvent->evenDescription;
                             
-                            echo "<div class='mt-2'><div class='badge bg-secondary fw-light py-2 px-3 text-dark' style='font-size: 14px;'>".date('\d. d-m-Y \k\l. H:i', strtotime($sportEvent->evenDateTime)) . "</div></div>";
+                            echo "<div class='mt-2'><div class='badge bg-secondary fw-light py-2 px-3 text-dark' style='font-size: 14px;'>" . date('\d. d-m-Y \k\l. H:i', strtotime($sportEvent->evenDateTime)) . "</div></div>";
                             ?>
                         </div>
                         <div class="card-footer text-muted text-center">
