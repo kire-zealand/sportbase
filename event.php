@@ -1,4 +1,5 @@
 <?php
+/** @var PDO $db */
 require "settings/init.php";
 
 if(empty($_GET["eventId"])) {
