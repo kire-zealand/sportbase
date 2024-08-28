@@ -24,11 +24,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur-dump for tabellen `event-team-con`
+-- Struktur-dump for tabellen `event_team_con`
 --
 
-DROP TABLE IF EXISTS `event-team-con`;
-CREATE TABLE IF NOT EXISTS `event-team-con` (
+DROP TABLE IF EXISTS `event_team_con`;
+CREATE TABLE IF NOT EXISTS `event_team_con` (
   `evtecId` int(11) NOT NULL AUTO_INCREMENT,
   `evtecEvenId` int(11) DEFAULT NULL,
   `evtecTeamId` int(11) DEFAULT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE IF NOT EXISTS `event-team-con` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_danish_ci;
 
 --
--- Data dump for tabellen `event-team-con`
+-- Data dump for tabellen `event_team_con`
 --
 
-INSERT INTO `event-team-con` (`evtecId`, `evtecEvenId`, `evtecTeamId`) VALUES
+INSERT INTO `event_team_con` (`evtecId`, `evtecEvenId`, `evtecTeamId`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 2, 2),
@@ -120,11 +120,11 @@ INSERT INTO `teams` (`teamId`, `teamName`, `teamCity`, `teamCoachName`, `teamCoa
 --
 
 --
--- Begrænsninger for tabel `event-team-con`
+-- Begrænsninger for tabel `event_team_con`
 --
-ALTER TABLE `event-team-con`
-  ADD CONSTRAINT `event-team-con_ibfk_1` FOREIGN KEY (`evtecEvenId`) REFERENCES `events` (`evenId`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `event-team-con_ibfk_2` FOREIGN KEY (`evtecTeamId`) REFERENCES `teams` (`teamId`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `event_team_con`
+  ADD CONSTRAINT `event_team_con_ibfk_1` FOREIGN KEY (`evtecEvenId`) REFERENCES `events` (`evenId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `event_team_con_ibfk_2` FOREIGN KEY (`evtecTeamId`) REFERENCES `teams` (`teamId`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
