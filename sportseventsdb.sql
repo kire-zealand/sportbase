@@ -78,9 +78,9 @@ CREATE TABLE IF NOT EXISTS `events` (
 --
 
 INSERT INTO `events` (`evenId`, `evenName`, `evenDateTime`, `evenLocation`, `evenDescription`) VALUES
-(1, 'Summer Championship', '2024-07-10 15:30:00', 'Parken Stadium', 'A major summer event featuring top teams.'),
+(1, 'Summer Championship', '2025-07-10 15:30:00', 'Parken Stadium', 'A major summer event featuring top teams.'),
 (2, 'Winter Classic', '2024-12-15 18:00:00', 'Aarhus Arena', 'An exciting winter event with intense competition.'),
-(3, 'Spring Tournament', '2024-04-20 14:00:00', 'Odense Stadium', 'A competitive spring tournament featuring upcoming teams.'),
+(3, 'Spring Tournament', '2025-04-20 14:00:00', 'Odense Stadium', 'A competitive spring tournament featuring upcoming teams.'),
 (4, 'Autumn Cup', '2024-10-05 16:00:00', 'Copenhagen Arena', 'An annual event marking the end of the sports season.');
 
 -- --------------------------------------------------------
