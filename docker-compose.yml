@@ -1,30 +1,24 @@
-version: '3.8'
-
 services:
-  apache-php-standard:
+
+  apache-php:
     build:
-      context: .
       dockerfile: _docker/php/Dockerfile
-    container_name: apache-php-standard
+    restart: no
     ports:
       - "80:80"
     volumes:
       - .:/var/www/html
       - ./_docker/php/php.ini:/usr/local/etc/php/php.ini
     depends_on:
-      - mariadb-standard
+      - mariadb
     env_file:
       - ./_docker/.env
     networks:
       - app-network
 
-  mariadb-standard:
+  mariadb:
     image: mariadb:latest
-    container_name: mariadb-standard
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_password}
-      MYSQL_USER: ${MYSQL_USER:-user}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-secretPassword}
+    restart: no
     volumes:
       - mariadb_data:/var/lib/mysql
       - ./_docker/mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -33,16 +27,13 @@ services:
     networks:
       - app-network
 
-  phpmyadmin-standard:
+  phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
-    container_name: phpmyadmin-standard
-    environment:
-      PMA_HOST: mariadb-standard
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_password}
+    restart: no
     ports:
       - "8080:80"
     depends_on:
-      - mariadb-standard
+      - mariadb
     env_file:
       - ./_docker/.env
     networks:

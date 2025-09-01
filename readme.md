@@ -2,8 +2,10 @@
 
 Download projektet som ZIP-fil
 
-- Åben projektet og kør kommandoen "npm install" i terminalen
-- Kør "sass" kommandoen fra npm scripts.
-- Åben docker-compose.yml og klik på play knapperne ud for services (kræver docker er åben)
+- Pak zip filen ud i den mappe hvor projektet skal ligge (ikke online mapper)
+- Gå til Tools=>Deployment=>Configuration og sikre http://localhost er sat som standard
+- Åben NPM vinduet og kør "Setup"
+- Opret en database i phpMyAdmin: http://localhost/phpMyAdmin kaldet sportseventsdb
+- Importer sql filen i roden af dette projekt 
   
-Du kan find npm scripts ved at dobbeltrykke på shift, på dit tastatur og søge. Alternativt kan du skrive "npm run sass" i terminalen
+Du kan find npm scripts ved at dobbeltrykke på shift, på dit tastatur og søge på npm.
